@@ -18,6 +18,8 @@ I converted the tables into DataFrames
 ### Merge Restaurant Business with Reviews
 Based on the business_id from the business table, I merged the restaurants table with the reviews table
 
+
+### Plot Graph of Top Restaurants with Most Reviews
 I plot a graph based on the top 50 restaurants with the most reviews:
 
 ```python
