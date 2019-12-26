@@ -35,4 +35,4 @@ ax.set_ylabel('Review Counts', fontsize=20)
 plt.legend(fontsize=20)
 plt.show()
 ```
-![](images/top_50_restaurants.jpg)
+![](images/top_50_restaurants.png)
