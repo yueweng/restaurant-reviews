@@ -40,7 +40,7 @@ plt.show()
 ```
 ![](images/top_50_restaurants.png)
 
-Graph of top 100 restaurants with Most Reviews
+### Graph of top 100 restaurants with Most Reviews
 
 ```python
 colors = ['blue', 'green', 'red', 'brown', 'cyan', 'purple']
@@ -62,3 +62,19 @@ plt.legend(fontsize=20)
 ```
 
 ![](images/top_100_restaurants.png)
+
+### Graph of States with Reviews
+```python
+business_review = pd.merge(restaurant_df, review_df, left_on='business_id', right_on='business_id')
+states_review = business_review.groupby('state')
+src = states_review.count()['review_id']
+
+fig, ax = plt.subplots(figsize=[20, 10])
+
+ax.set_title('States with Reviews', fontsize=20, pad=20)
+ax.set_xlabel('States', fontsize=20)
+ax.set_ylabel('Review Counts', fontsize=20)
+ax.plot(src)
+```
+
+![](images/states_with_reviews.png)
