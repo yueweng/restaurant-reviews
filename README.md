@@ -78,3 +78,29 @@ ax.plot(src)
 ```
 
 ![](images/states_with_reviews.png)
+
+### States with Top Reviews over the Years
+
+```python
+review_year = pd.DataFrame({"city": business_review['city'], "state": business_review['state'], 'year': business_review['date'].dt.year})
+review_year
+
+import matplotlib.pyplot as plt
+fig, ax = plt.subplots(figsize=[20, 10])
+
+ax.set_title('States with more than 100,000 Reviews over the Years', fontsize=20, pad=20)
+ax.set_xlabel('Years', fontsize=20)
+ax.set_ylabel('Number of Reviews', fontsize=20)
+
+for k, v in st_re.head(4).items():
+    year_count = review_year[review_year['state'] == k]
+    graph_year = year_count.groupby('year').count().reset_index()
+    ax.plot(graph_year['year'], graph_year['state'], label=k)
+
+plt.legend(fontsize=20)
+plt.show()
+```
+
+![](images/states_years.png)
+
+![](images/top_4_2012_states.png)
