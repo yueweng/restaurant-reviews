@@ -203,3 +203,5 @@ ax.bar(price_restaurants_df['Price'], price_restaurants_df['Count'])
 ax.set_xlabel('$ Dollar Sign', fontsize=20)
 ax.set_ylabel('Number of Reviews', fontsize=20)
 ```
+
+![](images/reviews_price_range.png)
