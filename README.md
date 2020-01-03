@@ -12,6 +12,15 @@ Using Docker, I set up a MongoDB container. Reading the files from Python, I sto
 
 I converted the tables into DataFrames
 
+Based on the data gathered, I am basing the popularity of the restaurants on the number of reviews.
+
+### Questions I am looking into:
+Based on the data provided:
+* Which States have the most Reviews? How does the trend look for each state?
+* Which Restaurants have the most Reviews? Where are they based in?
+* Which State has an average rating of more than 4 Stars?
+* Which Categories have the most Reviews? Which Attributes have the most Reviews?
+
 ### Filtering out irrelavant data
 * I am interested only in the Restaurant Businesses. Hence I filtered out the Businesses that have Restaurants in the categories table from the Business Table
 
@@ -107,6 +116,8 @@ plt.show()
 
 ### States with Reviews >= 4.0 Stars
 
+There are about 1708 entries
+
 ```python
 fourStars = business_checkin[business_checkin['stars'] >= 4.0]
 
@@ -173,3 +184,22 @@ ax.set_xlabel('Category Names', fontsize=20)
 ax.set_ylabel('Count', fontsize=20)
 ```
 ![](images/top_categories.png)
+
+### Number of Reviews based on Price Range
+
+```python
+att_reviews = pd.DataFrame({'name': stars_attributes['name'], 'city': stars_attributes['city'], 'state': stars_attributes['state'], 'business_id': stars_attributes['business_id'], 'attributes': stars})
+attr = att_reviews['attributes'].apply(pd.Series)
+attr_df = pd.concat([att_reviews, attr], axis=1).drop('attributes', axis=1)
+
+price_restaurants_df = attr_df.groupby('RestaurantsPriceRange2')
+price_restaurants_df = price_restaurants_df.count()['name']
+price_restaurants_df = pd.DataFrame(list(price_restaurants_df.items()), columns=['Price', 'Count'])
+
+fig, ax = plt.subplots(figsize=[20, 10])
+
+ax.set_title('Reviews >= 4.0 Stars Broken down by Price Range', fontsize=20, pad=20)
+ax.bar(price_restaurants_df['Price'], price_restaurants_df['Count'])
+ax.set_xlabel('$ Dollar Sign', fontsize=20)
+ax.set_ylabel('Number of Reviews', fontsize=20)
+```
