@@ -162,3 +162,4 @@ ax.set_yticklabels(top_few['Count'], fontsize=15)
 ax.set_xlabel('Category Names', fontsize=20)
 ax.set_ylabel('Count', fontsize=20)
 ```
+![](images/top_categories.png)
