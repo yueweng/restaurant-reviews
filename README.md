@@ -185,6 +185,10 @@ ax.set_ylabel('Count', fontsize=20)
 ```
 ![](images/top_categories.png)
 
+### Cuisines Breakdown
+
+![](images/cuisines_states.png)
+
 ### Number of Reviews based on Price Range
 
 ```python
@@ -213,3 +217,5 @@ ax.set_ylabel('Number of Reviews', fontsize=20)
 ![](images/reviews_dress_code.png)
 
 ![](images/reviews_noise_level.png)
+
+![](images/reviews_ambience.png)
