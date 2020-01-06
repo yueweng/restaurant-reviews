@@ -205,3 +205,11 @@ ax.set_ylabel('Number of Reviews', fontsize=20)
 ```
 
 ![](images/reviews_price_range.png)
+
+### Reviews based on other Attributes
+
+![](images/reviews_alcohol.png)
+
+![](images/reviews_dress_code.png)
+
+![](images/reviews_noise_level.png)
