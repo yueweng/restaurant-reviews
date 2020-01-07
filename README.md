@@ -225,3 +225,7 @@ ax.set_ylabel('Number of Reviews', fontsize=20)
 
 ### Las Vegas
 ![](images/categories_las_vegas.png)
+
+![](images/italian_las_vegas.png)
+
+![](images/dress_code_las_vegas.png)
