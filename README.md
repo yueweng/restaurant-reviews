@@ -219,3 +219,6 @@ ax.set_ylabel('Number of Reviews', fontsize=20)
 ![](images/reviews_noise_level.png)
 
 ![](images/reviews_ambience.png)
+
+### Diving into Analysis for NV & AZ
+![](images/nv_az_states.png)
