@@ -212,8 +212,6 @@ ax.set_ylabel('Number of Reviews', fontsize=20)
 
 ### Reviews based on other Attributes
 
-![](images/reviews_alcohol.png)
-
 ![](images/reviews_dress_code.png)
 
 ![](images/reviews_noise_level.png)
@@ -229,3 +227,7 @@ ax.set_ylabel('Number of Reviews', fontsize=20)
 ![](images/italian_las_vegas.png)
 
 ![](images/dress_code_las_vegas.png)
+
+![](images/noise_level_las_vegas.png)
+
+![](images/ambience_las_vegas.png)
