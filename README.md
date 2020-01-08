@@ -226,8 +226,8 @@ ax.set_ylabel('Number of Reviews', fontsize=20)
 
 ![](images/italian_las_vegas.png)
 
-![](images/dress_code_las_vegas.png)
+![](images/japanese_las_vegas.png)
 
-![](images/noise_level_las_vegas.png)
+### Hypothesis Testing
 
-![](images/ambience_las_vegas.png)
+* Italian Restaurants tend to get better Rating than Japanese Restaurants in Las Vegas
