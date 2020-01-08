@@ -234,6 +234,8 @@ ax.set_ylabel('Number of Reviews', fontsize=20)
 
 Null Hypothesis: Italian Restaurants > Japanese Restaurants
 
+#### Welsh's t-test
+
 ```python
 japaneselv_df = lv[(lv['categories'].str.contains('Japanese') & ~lv['categories'].str.contains('Italian'))]
 italianlv_df = lv[(lv['categories'].str.contains('Italian') & ~lv['categories'].str.contains('Japanese'))]
