@@ -230,4 +230,65 @@ ax.set_ylabel('Number of Reviews', fontsize=20)
 
 ### Hypothesis Testing
 
-* Italian Restaurants tend to get better Rating than Japanese Restaurants in Las Vegas
+* Japanese Restaurants tend to get better Rating than Italian Restaurants in Las Vegas
+
+Null Hypothesis: Italian Restaurants > Japanese Restaurants
+
+```python
+japaneselv_df = lv[(lv['categories'].str.contains('Japanese') & ~lv['categories'].str.contains('Italian'))]
+italianlv_df = lv[(lv['categories'].str.contains('Italian') & ~lv['categories'].str.contains('Japanese'))]
+
+jap_sample = []
+for i in range(100):
+    jap_sample.append(japaneselv_df.sample(1)['stars'].item())
+
+it_sample = []
+for i in range(120):
+    it_sample.append(italianlv_df.sample(1)['stars'].item())
+
+jap_success = 0
+
+for ele in jap_sample:
+    if ele >= 4.0:
+        jap_success += 1
+
+it_success = 0
+
+for ele in it_sample:
+    if ele >= 4.0:
+        it_success += 1
+
+shared_sample_freq = (jap_success + it_success) / (220)
+shared_sample_variance = 220 * (shared_sample_freq * (1 - shared_sample_freq)) / (100*120)
+
+difference_in_proportions = stats.norm(0, np.sqrt(shared_sample_variance))
+difference_in_proportions
+
+fig, ax = plt.subplots(1, figsize=(16, 3))
+
+x = np.linspace(-1, 1, num=250)
+ax.plot(x, difference_in_proportions.pdf(x), linewidth=3)
+ax.set_xlim(-1, 1)
+ax.set_title("Distribution of Difference in Sample Frequencies Assuming $H_0$")
+```
+
+![](images/h0.png)
+
+```python
+jap_sample_freq = jap_success / 100
+it_sample_freq = it_success / 120
+difference_in_sample_proportions = jap_sample_freq - it_sample_freq
+
+p_value = 1 - difference_in_proportions.cdf(difference_in_sample_proportions)
+
+fig, ax = plt.subplots(1, figsize=(16, 3))
+
+x = np.linspace(-1, 1, num=250)
+ax.plot(x, difference_in_proportions.pdf(x), linewidth=3)
+ax.fill_between(x, difference_in_proportions.pdf(x), where=(x >= difference_in_sample_proportions),
+                color="red", alpha=0.5)
+ax.set_xlim(-1, 1)
+ax.set_title("p-value Region")
+```
+
+![](images/p_value.png)
