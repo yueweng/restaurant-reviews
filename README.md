@@ -147,7 +147,7 @@ ax.set_ylabel('Number of Reviews', fontsize=20)
 
 ![](images/cities_in_state_ON.png)
 
-![](images/cities_in_state_NC.png)
+![](images/cities_in_state_QC.png)
 
 ### Top Categories with Reviews >= 4.0 Stars
 ```python
