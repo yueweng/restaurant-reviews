@@ -292,3 +292,7 @@ ax.set_title("p-value Region")
 ```
 
 ![](images/p_value.png)
+
+![](images/scatter_plot.png)
+
+![](images/box_plot.png)
