@@ -219,6 +219,8 @@ ax.set_ylabel('Number of Reviews', fontsize=20)
 ![](images/reviews_ambience.png)
 
 ### Diving into Analysis for NV & AZ
+
+Focusing on specific cities in NV & AZ
 ![](images/nv_az_states.png)
 
 ### Las Vegas
