@@ -4,11 +4,9 @@ Analysis of Restaurant Reviews based on Yelp Dataset
 ## Database: MongoDB
 Using Docker, I set up a MongoDB container. Reading the files from Python, I store the information into my MongoDB tables:
 
-* User Table
 * Reviews Table
 * Business Table
 * Checkin Table
-* Tip Table
 
 I converted the tables into DataFrames
 
@@ -224,6 +222,7 @@ Focusing on specific cities in NV & AZ
 ![](images/nv_az_states.png)
 
 ### Las Vegas
+I have decided to narrow my interests in Las Vegas since it has the most restaurants to review.
 ![](images/categories_las_vegas.png)
 
 ![](images/italian_las_vegas.png)
