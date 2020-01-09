@@ -183,10 +183,6 @@ ax.set_ylabel('Count', fontsize=20)
 ```
 ![](images/top_categories.png)
 
-### Cuisines Breakdown
-
-![](images/cuisines_states.png)
-
 ### Number of Reviews based on Price Range
 
 ```python
