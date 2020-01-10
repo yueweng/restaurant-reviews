@@ -14,7 +14,6 @@ Based on the data gathered, I am basing the popularity of the restaurants on the
 
 ### Questions I am looking into:
 Based on the data provided:
-* Which States have the most Reviews? How does the trend look for each state?
 * Which Restaurants have the most Reviews? Where are they based in?
 * Which State has an average rating of more than 4 Stars?
 * Which Categories have the most Reviews? Which Attributes have the most Reviews?
@@ -70,21 +69,6 @@ plt.legend(fontsize=20)
 
 ![](images/top_100_restaurants.png)
 
-### Graph of States with Reviews
-```python
-business_review = pd.merge(restaurant_df, review_df, left_on='business_id', right_on='business_id')
-states_review = business_review.groupby('state')
-src = states_review.count()['review_id']
-
-fig, ax = plt.subplots(figsize=[20, 10])
-
-ax.set_title('States with Reviews', fontsize=20, pad=20)
-ax.set_xlabel('States', fontsize=20)
-ax.set_ylabel('Review Counts', fontsize=20)
-ax.plot(src)
-```
-
-![](images/states_with_reviews.png)
 
 ### States with Top Reviews over the Years
 
@@ -204,11 +188,6 @@ ax.set_ylabel('Number of Reviews', fontsize=20)
 
 ![](images/reviews_price_range.png)
 
-### Reviews based on other Attributes
-
-![](images/reviews_dress_code.png)
-
-![](images/reviews_noise_level.png)
 
 ![](images/reviews_ambience.png)
 
@@ -229,7 +208,7 @@ I have decided to narrow my interests in Las Vegas since it has the most restaur
 
 * Japanese Restaurants tend to get better Rating than Italian Restaurants in Las Vegas
 
-Null Hypothesis: Italian Restaurants > Japanese Restaurants
+Null Hypothesis: Italian Restaurants >= Japanese Restaurants
 
 #### Welsh's t-test
 
@@ -300,3 +279,12 @@ ax.set_title("p-value Region")
 
 
 ![](images/box_plot.png)
+
+### Statistics
+Welch t-test: 0.01
+U test: 0.005
+
+### Future Work
+* Look into the User’s table and find a correlation between elite users/non-elite users with restaurant ratings
+
+* Explore the reviews given by elite users to see if they are helpful for other patrons
