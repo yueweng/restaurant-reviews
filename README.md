@@ -281,8 +281,8 @@ ax.set_title("p-value Region")
 ![](images/box_plot.png)
 
 ### Statistics
-Welch t-test: 0.01
-U test: 0.005
+Z-test: 0.0032
+U test: 6.414545653276808e-10 (0.00)
 
 ### Future Work
 * Look into the User’s table and find a correlation between elite users/non-elite users with restaurant ratings
