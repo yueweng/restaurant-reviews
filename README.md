@@ -46,55 +46,6 @@ plt.show()
 ```
 ![](images/top_50_restaurants.png)
 
-### Graph of top 100 restaurants with Most Reviews
-
-```python
-colors = ['blue', 'green', 'red', 'brown', 'cyan', 'purple']
-import matplotlib.pyplot as plt
-
-st = {}
-for idx, s in enumerate(state):
-    st[idx] = most_reviews[most_reviews['state'] == s]
-
-fig, ax = plt.subplots(figsize=[20,10])
-ax.set_title('Top 100 Resaturants with the Most Reviews', fontsize=20)
-ax.bar(most_reviews['name'], most_reviews['review_count'])
-for idx, s in enumerate(state):
-    ax.bar(st[idx]['name'], st[idx]['review_count'], color=colors[idx], label=s)
-ax.set_xticklabels(most_reviews['name'], rotation=90)
-ax.set_xlabel('Restaurants', fontsize=20)
-ax.set_ylabel('Review Counts', fontsize=20)
-plt.legend(fontsize=20)
-```
-
-![](images/top_100_restaurants.png)
-
-
-### States with Top Reviews over the Years
-
-```python
-review_year = pd.DataFrame({"city": business_review['city'], "state": business_review['state'], 'year': business_review['date'].dt.year})
-review_year
-
-import matplotlib.pyplot as plt
-fig, ax = plt.subplots(figsize=[20, 10])
-
-ax.set_title('States with more than 100,000 Reviews over the Years', fontsize=20, pad=20)
-ax.set_xlabel('Years', fontsize=20)
-ax.set_ylabel('Number of Reviews', fontsize=20)
-
-for k, v in st_re.head(4).items():
-    year_count = review_year[review_year['state'] == k]
-    graph_year = year_count.groupby('year').count().reset_index()
-    ax.plot(graph_year['year'], graph_year['state'], label=k)
-
-plt.legend(fontsize=20)
-plt.show()
-```
-
-![](images/states_years.png)
-
-![](images/top_4_2012_states.png)
 
 ### States with Reviews >= 4.0 Stars
 
